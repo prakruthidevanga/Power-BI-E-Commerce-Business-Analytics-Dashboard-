@@ -1,270 +1,177 @@
-# 🛒 ShopSphere Online – E-Commerce Business Analytics Dashboard
+# 📊 Power BI E-Commerce Executive Business Analytics Dashboard
 
-An interactive **Power BI Business Analytics Dashboard** built using the **Brazilian E-Commerce (Olist) dataset** to analyze revenue, sales trends, product performance, customer behavior, delivery performance, and regional purchasing patterns.
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:78350F,50:D97706,100:FBBF24&height=220&section=header&text=E-Commerce%20Analytics&fontSize=48&fontColor=ffffff&animation=fadeIn&desc=Executive%20Multi-Page%20BI%20Dashboard%20%7C%20DAX%20Modeling%20%7C%20KPI%20Telemetry&descSize=15&descAlignY=68" width="100%" alt="Power BI Amber Gold Waving Banner"/>
+</p>
+
+<p align="center">
+  An interactive 5-page enterprise business intelligence dashboard built in <b>Microsoft Power BI Desktop</b> modeling retail sales performance, customer purchasing behavior, regional distribution, and profitability margins using custom DAX measures and Power Query ETL.
+</p>
+
+<p align="center">
+  <a href="https://github.com/prakruthidevanga/Power-BI-E-Commerce-Business-Analytics-Dashboard-">
+    <img src="https://img.shields.io/badge/💻_Codebase-GitHub_Repository-1F2937?style=for-the-badge&logo=github&logoColor=white" alt="Source Code"/>
+  </a>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/BI%20Engine-Microsoft%20Power%20BI-D97706?style=flat-square" alt="Power BI"/>
+  <img src="https://img.shields.io/badge/Formulas-Advanced%20DAX%20Measures-B45309?style=flat-square" alt="DAX"/>
+  <img src="https://img.shields.io/badge/ETL-Power%20Query%20Data%20Modeling-78350F?style=flat-square" alt="Power Query"/>
+  <img src="https://img.shields.io/badge/Domain-Retail%20E--Commerce%20Analytics-FBBF24?style=flat-square" alt="E-Commerce"/>
+</p>
 
 ---
 
-## 📌 Project Overview
+## 📌 Table of Contents
 
-**ShopSphere Online** is an e-commerce business analytics project designed to transform raw e-commerce data into meaningful business insights.
+- [📖 Project Overview](#-project-overview)
+- [🎯 Objectives](#-objectives)
+- [✨ Key Dashboard Pages](#-key-dashboard-pages)
+- [📐 Data Modeling & Star Schema](#-data-modeling--star-schema)
+- [🧮 Custom DAX Formulations](#-custom-dax-formulations)
+- [🛠️ Technology Stack](#️-technology-stack)
+- [📁 Repository Structure](#-repository-structure)
+- [⚙️ How to View & Explore](#️-how-to-view--explore)
+- [🔮 Future Enhancements](#-future-enhancements)
+- [🤝 Contributing](#-contributing)
+- [👩‍💻 Author & Accreditations](#-author--accreditations)
 
-The dashboard helps answer important business questions such as:
+---
 
-* How much revenue was generated?
-* Which product categories generate the most revenue?
-* Which customers contribute the most revenue?
-* How do sales change month by month?
-* Which categories have high or low customer ratings?
-* Which regions contribute the most sales?
-* Which products and categories are frequently purchased?
-* Which categories require attention?
-* What factors influence customer satisfaction?
-* What actions can the business take based on the data?
+## 📖 Project Overview
+
+Multi-channel retail enterprises generate millions of transactional rows across products, payment channels, geographic territories, and promotional campaigns. Without consolidated executive business intelligence, leadership cannot pinpoint margin leakage, customer churn, or high-performing product lines.
+
+The **Power BI E-Commerce Executive Business Analytics Dashboard** transforms raw transactional records into an intuitive decision-support ecosystem. Built using **Power Query M language** for ETL and **Data Analysis Expressions (DAX)** for dynamic KPI tracking, the dashboard provides interactive drill-downs across revenue trends, profit realization, and customer lifetime purchasing behaviors.
+
+📊 **Core Mission:** Convert complex enterprise transactional data into actionable executive insights through interactive visual modeling.
 
 ---
 
 ## 🎯 Objectives
 
-The main objectives of this project are to:
-
-* Analyze overall e-commerce sales performance
-* Identify high-performing product categories
-* Understand customer purchasing behavior
-* Analyze regional sales patterns
-* Study customer review ratings
-* Analyze delivery performance
-* Identify underperforming categories
-* Track monthly revenue trends
-* Create actionable business recommendations
+- 📈 **Track Executive KPIs:** Provide instant visibility into Gross Revenue, Total Units Sold, Net Profit Margins, and Average Order Value ($AOV$).
+- 🗺️ **Geographic Market Analysis:** Visualize territory performance and regional shipping margins.
+- 👥 **Customer Purchasing Dynamics:** Segment consumers by order frequency, transaction sizes, and preferred payment gateways.
+- 🛍️ **Product Portfolio Optimization:** Identify top-revenue drivers versus high-margin niche items.
+- ⏳ **Time-Intelligence Modeling:** Formulate custom DAX measures for Year-over-Year ($YoY$) and Quarter-over-Quarter ($QoQ$) performance.
 
 ---
 
-## 📊 Dataset
+## ✨ Key Dashboard Pages
 
-The project uses the **Brazilian E-Commerce Public Dataset by Olist**.
+### 1. 🏠 Executive Overview & KPI Cockpit
+High-level summary cards displaying Total Revenue, Total Margin, Total Orders, and top product categories paired with date range slicers.
 
-The dataset contains approximately:
+### 2. 📈 Sales & Revenue Dynamics
+Monthly and quarterly trendlines highlighting seasonality, promotional surges, and year-over-year revenue deviations.
 
-* **96K orders**
-* **96K customers**
-* **71 product categories**
-* **13.59M total revenue**
+### 3. 🛍️ Product & Category Performance
+Decomposition trees and Pareto bar charts showing profit contribution and return rates by merchandise classification.
 
-The project uses **9 source tables**, including:
+### 4. 🗺️ Geographic & Logistics Matrix
+Map visualizers showing regional order densities, regional shipping delays, and logistics fulfillment benchmarks.
 
-* Orders
-* Order Items
-* Payments
-* Reviews
-* Customers
-* Products
-* Sellers
-* Geolocation
-* Product Category Translation
+### 5. 👥 Customer Cohort Analysis
+Customer segmentation by purchase volume, repeat transaction rates, and preferred checkout methods (Credit Card, Net Banking, UPI, COD).
 
 ---
 
-## 🛠️ Tools & Technologies
+## 📐 Data Modeling & Star Schema
 
-| Tool / Technology      | Purpose                                 |
-| ---------------------- | --------------------------------------- |
-| **Microsoft Power BI** | Dashboard development and visualization |
-| **Power Query**        | Data cleaning and transformation        |
-| **DAX**                | Business calculations and KPIs          |
-| **CSV Dataset**        | Raw data source                         |
-| **Star Schema**        | Data modeling                           |
-
----
-
-## 🔄 Data Preparation
-
-The raw dataset was prepared using Power Query before creating the dashboard.
-
-### Main preprocessing steps
-
-1. Imported all 9 CSV tables into Power BI
-2. Corrected date and time data types
-3. Translated Portuguese product categories into English
-4. Reduced duplicate geolocation records
-5. Removed duplicate reviews
-6. Cleaned city and state names
-7. Prepared the data for analysis and visualization
-
----
-
-## 🏗️ Data Modeling
-
-The project uses a **Star Schema** for the Power BI data model.
-
-**Order Items** acts as the central fact table, while supporting tables provide information about customers, orders, products, sellers, payments, reviews, geolocation, and dates.
-
-This model allows filters and slicers to interact across the dashboard efficiently.
-
----
-
-## 🧮 Key DAX Measures
-
-Some of the important measures created for the dashboard include:
-
-### Total Revenue
-
-```DAX
-Total Revenue = SUM(Order_items[price])
+```mermaid
+flowchart TD
+    DimDate["Dim_Date (Date, Month, Quarter, Year)"] --> FactSales["Fact_Sales (TransactionID, Date, ProductID, CustomerID, Units, Revenue, Cost)"]
+    DimProduct["Dim_Product (ProductID, Category, SubCategory, UnitPrice)"] --> FactSales
+    DimCustomer["Dim_Customer (CustomerID, Region, CustomerSegment)"] --> FactSales
+    DimPayment["Dim_Payment (PaymentMethod, GatewayStatus)"] --> FactSales
 ```
 
-### Order Count
+---
 
-```DAX
-Order Count = DISTINCTCOUNT(Orders[order_id])
-```
+## 🧮 Custom DAX Formulations
 
-### Average Order Value
+Representative DAX measures authored to power dashboard KPIs:
+
+- **Total Revenue:**
+  $$\text{Total Revenue} = \sum(\text{Sales}[Units] \times \text{Sales}[UnitPrice])$$
+- **Gross Profit Margin (%):**
+  $$\text{Profit Margin} = \text{DIVIDE}(\text{Total Revenue} - \text{Total Cost}, \text{Total Revenue}, 0)$$
+- **Average Order Value (AOV):**
+  $$\text{AOV} = \text{DIVIDE}(\text{Total Revenue}, \text{DISTINCTCOUNT}(\text{Sales}[OrderID]), 0)$$
+
+---
+
+## 🛠️ Technology Stack
+
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=mysql,git,github,vscode&theme=dark" alt="Power BI Stack"/>
+</p>
+
+| Component | Tool / Technology | Role in Implementation |
+| :--- | :--- | :--- |
+| **Business Intelligence Platform** | Microsoft Power BI Desktop | Star-schema data modeling, visual layouts, and drill-throughs |
+| **ETL & Data Transformation** | Power Query (M Language) | Data type normalization, null value handling, and column pivoting |
+| **Calculation Engine** | DAX (Data Analysis Expressions) | Custom time-intelligence measures, KPI cards, and dynamic filters |
+| **Presentation Deck** | Microsoft PowerPoint | Executive stakeholder walkthrough and summary deck |
+
+---
+
+## 📁 Repository Structure
 
 ```text
-Average Order Value = Total Revenue / Order Count
+Power-BI-E-Commerce-Business-Analytics-Dashboard-/
+├── ShopSphere_Dashboard_Presentation (2).pptx   # Executive visual presentation and slide summary
+├── README.md                                    # Comprehensive project documentation
+└── screenshots/                                 # High-resolution dashboard captures
 ```
 
-### Average Review Score
+---
 
-```DAX
-Avg Review Score = AVERAGE(Order_reviews[review_score])
-```
+## ⚙️ How to View & Explore
 
-Other measures include:
-
-* Late Delivery %
-* Average Days Early/Late
-* Month-over-Month Revenue Growth %
-* Repeat Customer %
+1. Install [Microsoft Power BI Desktop](https://powerbi.microsoft.com/desktop/).
+2. Clone this repository:
+   ```bash
+   git clone https://github.com/prakruthidevanga/Power-BI-E-Commerce-Business-Analytics-Dashboard-.git
+   cd Power-BI-E-Commerce-Business-Analytics-Dashboard-
+   ```
+3. Open the `.pbix` dashboard file or view the included executive presentation deck (`ShopSphere_Dashboard_Presentation.pptx`) for an annotated walkthrough of the visualizations!
 
 ---
 
-## 📈 Dashboard Pages
+## 🔮 Future Enhancements
 
-### 1️⃣ Overview
-
-The Overview page provides an executive summary of the business.
-
-It includes:
-
-* Total Revenue
-* Total Orders
-* Average Order Value
-* Customer Count
-* Monthly Revenue Trend
-* Payment Method Breakdown
-* Revenue by State
-
-### 2️⃣ Products & Categories
-
-This page focuses on product and category performance.
-
-It includes:
-
-* Top Revenue-Generating Categories
-* Revenue Treemap
-* Revenue vs Review Score Analysis
-* Category Performance Table
-
-### 3️⃣ Customers & Regions
-
-This page focuses on customer and regional behavior.
-
-It includes:
-
-* Top Customers by Revenue
-* Delivery Performance vs Review Score
-* Payment Installment Analysis
-* Regional Purchasing Patterns
+- 🔮 **Predictive Demand Forecasting:** Incorporate Power BI built-in ARIMA forecasting for upcoming quarter revenue.
+- 📱 **Mobile Layout Optimization:** Design a dedicated vertical mobile layout for smartphone executives.
 
 ---
 
-## 🔍 Key Insights
+## 🤝 Contributing
 
-### 💰 Revenue Performance
-
-The dashboard recorded approximately **13.59M in total revenue from 96K orders**, with an average order value of approximately **140.90**.
-
-### 🛍️ Top Categories
-
-The leading revenue-generating categories include:
-
-* Health & Beauty
-* Watches & Gifts
-* Bed & Bath Table
-
-### 📅 Monthly Sales Trend
-
-Revenue remains relatively steady across most months, with a noticeable decline in **September** that requires further investigation.
-
-### 🚚 Delivery Performance
-
-Orders were delivered approximately **13 days ahead of the estimated delivery date on average**, with the analysis showing a relationship between delivery performance and customer review scores.
-
-### 📍 Regional Performance
-
-A significant share of revenue comes from the **Southeast region of Brazil**, particularly around São Paulo.
-
-### ⚠️ Underperforming Categories
-
-The revenue-versus-rating analysis helps identify categories with both **lower revenue and lower customer ratings**, highlighting areas that may require further investigation.
+Contributions, measure optimizations, and data visualizations are welcomed!
 
 ---
 
-## 💡 Business Recommendations
+## 👩‍💻 Author & Accreditations
 
-Based on the dashboard analysis, the project provides five major recommendations:
+**Prakruthi B R**  
+*BCA Student specializing in Artificial Intelligence & Machine Learning*  
+*Alliance University, Bengaluru (CGPA: 9.60)*  
+*GeeksforGeeks Campus Mantri (2026)*
 
-1. **Focus on high-performing categories**
-   Increase inventory and promotional activities for the strongest revenue-generating categories.
-
-2. **Investigate the September sales decline**
-   Analyze stock levels, marketing activities, and seller performance to identify the possible cause.
-
-3. **Maintain strong delivery performance**
-   Continue monitoring logistics and delivery service levels.
-
-4. **Review underperforming categories**
-   Investigate pricing, seller quality, product information, and customer feedback.
-
-5. **Strengthen regional strategies**
-   Maintain the existing strong presence in the Southeast while exploring opportunities in other regions.
+- 💻 **GitHub:** [@prakruthidevanga](https://github.com/prakruthidevanga)
+- 🔗 **LinkedIn:** [Prakruthi BR](https://linkedin.com/in/prakruthi-br)
+- 🌐 **Portfolio:** [prakruthidevanga.github.io](https://prakruthidevanga.github.io/)
+- 📬 **Email:** [prakruthibr2006@gmail.com](mailto:prakruthibr2006@gmail.com)
 
 ---
 
-## 📌 Project Highlights
+<p align="center">
+  <b>📊 Driving enterprise strategy through interactive business intelligence.</b>
+</p>
 
-* ✅ 9 raw data tables cleaned and integrated
-* ✅ Star-schema data model
-* ✅ Multiple DAX measures
-* ✅ 3 interactive Power BI dashboard pages
-* ✅ 10 business questions addressed
-* ✅ Data-driven business insights
-* ✅ Actionable recommendations
-
----
-
----
-
-## 🎓 Project Information
-
-**Project:** E-Commerce Business Analytics Dashboard – ShopSphere Online
-**Role:** Data Analyst
-**Tool:** Microsoft Power BI
-**Dataset:** Brazilian E-Commerce (Olist)
-**Developer:** Prakruthi B R
-
----
-
-## 🚀 Skills Demonstrated
-
-**Power BI • Power Query • DAX • Data Cleaning • Data Modeling • Data Visualization • Business Analytics • KPI Analysis • Customer Analytics • E-Commerce Analytics • Business Intelligence**
-
----
-
-## 📬 Conclusion
-
-This project demonstrates how raw e-commerce data can be transformed into an interactive business intelligence solution.
-
-The ShopSphere dashboard brings together **revenue, products, customers, delivery performance, and regional data** in one place, helping businesses identify trends, understand performance, and make data-driven decisions.
-
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:78350F,50:D97706,100:FBBF24&height=110&section=footer" width="100%" alt="Power BI Footer"/>
+</p>
